@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CallTamer</string>
+
+    <!-- Navigation / Top Bar -->
+    <string name="nav_back">Wstecz</string>
+    <string name="title_block_a_number">Zablokuj numer</string>
+    <string name="title_set_duration">Ustaw czas</string>
+    <string name="title_change_duration">Zmień czas</string>
+    <string name="title_block_details">Szczegóły blokady</string>
+    <string name="title_call_history">Historia połączeń</string>
+    <string name="title_settings">Ustawienia</string>
+
+    <!-- Home Screen -->
+    <string name="home_history_cd">Historia</string>
+    <string name="home_settings_cd">Ustawienia</string>
+    <string name="home_add_block_cd">Dodaj blokadę</string>
+    <string name="home_role_warning">Blokowanie nieaktywne — dotknij, aby przyznać rolę Call Screening</string>
+    <string name="home_empty_title">Brak aktywnych blokad</string>
+    <string name="home_empty_subtitle">Naciśnij + aby zablokować numer</string>
+    <string name="badge_temporary">Tymczasowa</string>
+    <string name="badge_permanent">Stała</string>
+    <string name="badge_reject">Odrzuć</string>
+    <string name="badge_silence">Wycisz</string>
+
+    <!-- Add Block Screen -->
+    <string name="add_phone_label">Numer telefonu</string>
+    <string name="add_suggestions_label">Pasujące kontakty:</string>
+    <string name="add_continue">Dalej</string>
+    <string name="add_or_pick">Lub wybierz z:</string>
+    <string name="add_from_contacts">Z kontaktów</string>
+    <string name="add_from_recent_calls">Z ostatnich połączeń</string>
+    <string name="add_recent_header">Ostatnie połączenia:</string>
+
+    <!-- Duration Selection -->
+    <string name="duration_behavior_label">Zachowanie:</string>
+    <string name="duration_reject">Odrzuć</string>
+    <string name="duration_silence">Wycisz</string>
+    <string name="duration_label">Czas blokady:</string>
+    <string name="duration_saving">Tworzenie blokady…</string>
+    <string name="duration_1h">1 godzina</string>
+    <string name="duration_2h">2 godziny</string>
+    <string name="duration_8h">8 godzin</string>
+    <string name="duration_until_tomorrow">Do jutra</string>
+    <string name="duration_custom">Własny</string>
+    <string name="duration_permanent">Na stałe</string>
+    <string name="duration_block_label">Blokada: %s</string>
+    <string name="duration_success">Blokada utworzona!</string>
+    <string name="duration_confirm">Potwierdź</string>
+    <string name="duration_cancel">Anuluj</string>
+    <string name="duration_next">Wybierz godzinę</string>
+    <string name="duration_back">Wstecz</string>
+    <string name="duration_time_label">Wybierz godzinę</string>
+
+    <!-- Block Detail Screen -->
+    <string name="detail_type">Typ</string>
+    <string name="detail_temporary">Tymczasowa</string>
+    <string name="detail_permanent">Stała</string>
+    <string name="detail_behavior">Zachowanie</string>
+    <string name="detail_created">Utworzono</string>
+    <string name="detail_expires">Wygasa</string>
+    <string name="detail_remaining">Pozostało</string>
+    <string name="detail_extend_by">Przedłuż o:</string>
+    <string name="detail_extend_1h">1g</string>
+    <string name="detail_extend_2h">2g</string>
+    <string name="detail_extend_8h">8g</string>
+    <string name="detail_convert_permanent">Zmień na stałą</string>
+    <string name="detail_convert_temporary">Zmień na tymczasową</string>
+    <string name="detail_unblock">Odblokuj teraz</string>
+    <string name="unblock_confirm_title">Odblokować?</string>
+    <string name="unblock_confirm_message">To natychmiast zakończy blokowanie numeru %1$s.</string>
+    <string name="unblock_confirm_confirm">Odblokuj</string>
+    <string name="unblock_confirm_cancel">Anuluj</string>
+    <string name="remaining_permanent">Stała</string>
+    <string name="remaining_expiring">Wygasa…</string>
+    <string name="remaining_hours_minutes">%1$d g %2$d min</string>
+    <string name="remaining_hours">%1$d g</string>
+    <string name="remaining_minutes">%1$d min</string>
+    <string name="remaining_less_than_minute">Mniej niż minutę</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_expiry_name">Wygaśnięcie blokady</string>
+    <string name="notification_channel_expiry_desc">Powiadomienia, gdy tymczasowa blokada wygaśnie</string>
+    <string name="notification_block_expired_title">Blokada wygasła</string>
+    <string name="notification_block_expired_text">Blokada numeru %1$s wygasła</string>
+    <string name="notification_channel_blocked_reject_name">Zablokowane połączenia</string>
+    <string name="notification_channel_blocked_reject_desc">Powiadomienia, gdy połączenie zostanie odrzucone</string>
+    <string name="notification_channel_blocked_silence_name">Wyciszone połączenia</string>
+    <string name="notification_channel_blocked_silence_desc">Powiadomienia, gdy połączenie zostanie wyciszone</string>
+    <string name="notification_blocked_title">Połączenie zablokowane</string>
+    <string name="notification_blocked_text">Numer %1$s został zablokowany</string>
+    <string name="notification_silenced_title">Połączenie wyciszone</string>
+    <string name="notification_silenced_text">Numer %1$s został wyciszony</string>
+    <string name="notification_unblock_action">Odblokuj</string>
+
+    <!-- History Screen -->
+    <string name="history_clear_cd">Wyczyść historię</string>
+    <string name="history_clear_title">Wyczyścić historię?</string>
+    <string name="history_clear_message">Wszystkie wpisy historii połączeń zostaną trwale usunięte.</string>
+    <string name="history_clear_confirm">Wyczyść</string>
+    <string name="history_clear_cancel">Anuluj</string>
+    <string name="history_empty">Brak historii</string>
+    <string name="history_no_matches">Brak pasujących wpisów</string>
+    <string name="history_rejected">Odrzucone</string>
+    <string name="history_silenced">Wyciszone</string>
+    <string name="history_allowed">Dozwolone</string>
+    <string name="history_block">Zablokuj</string>
+    <string name="history_call">Zadzwoń</string>
+    <string name="history_search_hint">Szukaj w historii</string>
+    <string name="history_stats_today">Dziś</string>
+    <string name="history_stats_week">7 dni</string>
+    <string name="history_stats_total">Razem</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_role_title">Rola Call Screening</string>
+    <string name="settings_role_status">Status: %s</string>
+    <string name="settings_role_active">Aktywna</string>
+    <string name="settings_role_not_granted">Nie przyznano</string>
+    <string name="settings_role_grant">Przyznaj rolę Call Screening</string>
+    <string name="settings_change_app">Zmień domyślne aplikacje</string>
+    <string name="settings_open_app">Otwórz ustawienia aplikacji</string>
+    <string name="settings_background_protection">Zezwól na działanie w tle</string>
+    <string name="settings_background_protection_enabled">Działanie w tle dozwolone</string>
+    <string name="settings_background_protection_disabled">Działanie w tle ograniczone</string>
+    <string name="settings_theme_title">Motyw</string>
+    <string name="settings_theme_system">Systemowy</string>
+    <string name="settings_theme_light">Jasny</string>
+    <string name="settings_theme_dark">Ciemny</string>
+    <string name="settings_language_title">Język</string>
+    <string name="settings_language_system">Systemowy</string>
+    <string name="settings_language_english">Angielski</string>
+    <string name="settings_language_polish">Polski</string>
+    <string name="settings_notify_title">Powiadomienia</string>
+    <string name="settings_notify_rejected_desc">Odrzucone połączenia</string>
+    <string name="settings_notify_silenced_desc">Wyciszone połączenia</string>
+    <string name="settings_notify_expiry_desc">Wygaśnięcie blokady</string>
+    <string name="settings_summary_title">Aktywne blokady</string>
+    <string name="settings_summary_active">%1$d numer(y) obecnie zablokowany(e)</string>
+    <string name="settings_summary_empty">Brak aktywnych blokad</string>
+    <string name="settings_about">O aplikacji</string>
+    <string name="settings_version">CallTamer v1.0.0</string>
+    <string name="settings_description">Tymczasowe blokowanie połączeń. W pełni offline, prywatność przede wszystkim.</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Witaj w CallTamer</string>
+    <string name="onboarding_welcome_body">Tymczasowo blokuj niechciane połączenia bez dodawania numerów do stałej czarnej listy. Blokady wygasają automatycznie.</string>
+    <string name="onboarding_permissions_title">Wymagane uprawnienia</string>
+    <string name="onboarding_permissions_body">• Rola Call Screening — do blokowania przychodzących połączeń\n• Powiadomienia — o wygaśnięciu blokady\n• Kontakty — do wybierania numerów z książki adresowej\n• Dziennik połączeń — do blokowania numerów z ostatnich połączeń</string>
+    <string name="onboarding_get_started">Rozpocznij</string>
+    <string name="onboarding_checking">Sprawdzanie uprawnień…</string>
+
+    <string name="onboarding_role_title">Rola Call Screening</string>
+    <string name="onboarding_role_body">CallTamer musi być ustawiony jako domyślna aplikacja do identyfikacji dzwoniącego i blokowania spamu, aby móc blokować przychodzące połączenia. Bez tej roli blokowanie nie będzie działać — połączenia będą przechodzić normalnie.</string>
+    <string name="onboarding_role_hint">Zostaniesz przeniesiony do ustawień systemowych. Włącz przełącznik, aby przyznać CallTamer tę rolę, a następnie wróć.</string>
+    <string name="onboarding_role_grant">Przyznaj rolę Call Screening</string>
+
+    <string name="onboarding_notif_title">Powiadomienia</string>
+    <string name="onboarding_notif_body">CallTamer wysyła powiadomienie, gdy tymczasowa blokada wygaśnie, abyś wiedział, że została zdjęta. Bez tego musiałbyś sprawdzać w aplikacji.</string>
+    <string name="onboarding_notif_allow">Zezwól na powiadomienia</string>
+
+    <string name="onboarding_contacts_title">Dostęp do kontaktów</string>
+    <string name="onboarding_contacts_body">Podczas blokowania numeru możesz wybrać go bezpośrednio z książki adresowej zamiast wpisywać ręcznie. To uprawnienie pozwala CallTamer odczytać numer z wybranego kontaktu. Twoje kontakty nigdy nie opuszczą urządzenia.</string>
+    <string name="onboarding_contacts_allow">Zezwól na dostęp do kontaktów</string>
+
+    <string name="onboarding_calllog_title">Dostęp do dziennika połączeń</string>
+    <string name="onboarding_calllog_body">Podczas blokowania numeru możesz wybrać go z ostatnich połączeń przychodzących lub wychodzących. To uprawnienie pozwala CallTamer odczytać numer i czas z dziennika połączeń. Twoja historia połączeń nigdy nie opuści urządzenia.</string>
+    <string name="onboarding_calllog_allow">Zezwól na dostęp do dziennika połączeń</string>
+
+    <string name="onboarding_skip">Pomiń — zrobię to później</string>
+    <string name="onboarding_complete_title">Gotowe!</string>
+    <string name="onboarding_complete_body">CallTamer jest gotowy. Uprawnienia możesz zawsze zmienić w Ustawieniach.</string>
+    <string name="onboarding_start">Rozpocznij korzystanie</string>
+</resources>
