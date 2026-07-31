@@ -1,0 +1,39 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Red outer circle -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M54,54m-36,0a36,36 0,1 1,72 0a36,36 0,1 1,-72 0" />
+
+    <!-- Smaller white inner circle (creates red ring) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,54m-20,0a20,20 0,1 1,40 0a20,20 0,1 1,-40 0" />
+
+    <!-- Diagonal red line through white center -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M34,42L66,74L74,66L42,34Z" />
+
+    <!-- White left eye (top of red ring) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,30m-4.5,0a4.5,4.5 0,1 1,9 0a4.5,4.5 0,1 1,-9 0" />
+
+    <!-- White right eye (top of red ring) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M72,30m-4.5,0a4.5,4.5 0,1 1,9 0a4.5,4.5 0,1 1,-9 0" />
+
+    <!-- White smiley curve mouth (bottom of red ring) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M38,76C46,84 62,84 70,76" />
+</vector>

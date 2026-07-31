@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CallTamer</string>
+
+    <!-- Navigation / Top Bar -->
+    <string name="nav_back">Back</string>
+    <string name="title_block_a_number">Block a Number</string>
+    <string name="title_set_duration">Set Duration</string>
+    <string name="title_change_duration">Change Duration</string>
+    <string name="title_block_details">Block Details</string>
+    <string name="title_call_history">Call History</string>
+    <string name="title_settings">Settings</string>
+
+    <!-- Home Screen -->
+    <string name="home_history_cd">History</string>
+    <string name="home_settings_cd">Settings</string>
+    <string name="home_add_block_cd">Add block</string>
+    <string name="home_role_warning">Call blocking is inactive — tap to grant Call Screening role</string>
+    <string name="home_empty_title">No active blocks</string>
+    <string name="home_empty_subtitle">Tap + to block a number</string>
+    <string name="badge_temporary">Temporary</string>
+    <string name="badge_permanent">Permanent</string>
+    <string name="badge_reject">Reject</string>
+    <string name="badge_silence">Silence</string>
+
+    <!-- Add Block Screen -->
+    <string name="add_phone_label">Phone number</string>
+    <string name="add_suggestions_label">Matching contacts:</string>
+    <string name="add_continue">Continue</string>
+    <string name="add_or_pick">Or pick from:</string>
+    <string name="add_from_contacts">From Contacts</string>
+    <string name="add_from_recent_calls">From Recent Calls</string>
+    <string name="add_recent_header">Recent calls:</string>
+
+    <!-- Duration Selection -->
+    <string name="duration_behavior_label">Behavior:</string>
+    <string name="duration_reject">Reject</string>
+    <string name="duration_silence">Silence</string>
+    <string name="duration_label">Duration:</string>
+    <string name="duration_saving">Creating block…</string>
+    <string name="duration_1h">1 hour</string>
+    <string name="duration_2h">2 hours</string>
+    <string name="duration_8h">8 hours</string>
+    <string name="duration_until_tomorrow">Until tomorrow</string>
+    <string name="duration_custom">Custom</string>
+    <string name="duration_permanent">Permanent</string>
+    <string name="duration_block_label">Block: %s</string>
+    <string name="duration_success">Block created successfully!</string>
+    <string name="duration_confirm">Confirm</string>
+    <string name="duration_cancel">Cancel</string>
+    <string name="duration_next">Choose Time</string>
+    <string name="duration_back">Back</string>
+    <string name="duration_date_label">Date</string>
+    <string name="duration_time_label">Select time</string>
+
+    <!-- Block Detail Screen -->
+    <string name="detail_type">Type</string>
+    <string name="detail_temporary">Temporary</string>
+    <string name="detail_permanent">Permanent</string>
+    <string name="detail_behavior">Behavior</string>
+    <string name="detail_created">Created</string>
+    <string name="detail_expires">Expires</string>
+    <string name="detail_remaining">Remaining</string>
+    <string name="detail_extend_by">Extend by:</string>
+    <string name="detail_extend_1h">1h</string>
+    <string name="detail_extend_2h">2h</string>
+    <string name="detail_extend_8h">8h</string>
+    <string name="detail_convert_permanent">Convert to Permanent</string>
+    <string name="detail_convert_temporary">Make Temporary</string>
+    <string name="detail_unblock">Unblock Now</string>
+    <string name="unblock_confirm_title">Unblock?</string>
+    <string name="unblock_confirm_message">This will immediately stop blocking %1$s.</string>
+    <string name="unblock_confirm_confirm">Unblock</string>
+    <string name="unblock_confirm_cancel">Cancel</string>
+    <string name="remaining_permanent">Permanent</string>
+    <string name="remaining_expiring">Expiring…</string>
+    <string name="remaining_hours_minutes">%1$d h %2$d m</string>
+    <string name="remaining_hours">%1$d h</string>
+    <string name="remaining_minutes">%1$d m</string>
+    <string name="remaining_less_than_minute">Less than a minute</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_expiry_name">Block Expiry</string>
+    <string name="notification_channel_expiry_desc">Notifications when a temporary block expires</string>
+    <string name="notification_block_expired_title">Block Expired</string>
+    <string name="notification_block_expired_text">The block on %1$s has expired</string>
+    <string name="notification_channel_blocked_reject_name">Blocked Calls</string>
+    <string name="notification_channel_blocked_reject_desc">Notifications when a call is rejected</string>
+    <string name="notification_channel_blocked_silence_name">Silenced Calls</string>
+    <string name="notification_channel_blocked_silence_desc">Notifications when a call is silenced</string>
+    <string name="notification_blocked_title">Call blocked</string>
+    <string name="notification_blocked_text">%1$s was blocked</string>
+    <string name="notification_silenced_title">Call silenced</string>
+    <string name="notification_silenced_text">%1$s was silenced</string>
+    <string name="notification_unblock_action">Unblock</string>
+
+    <!-- History Screen -->
+    <string name="history_clear_cd">Clear history</string>
+    <string name="history_clear_title">Clear history?</string>
+    <string name="history_clear_message">This will permanently delete all call history entries.</string>
+    <string name="history_clear_confirm">Clear</string>
+    <string name="history_clear_cancel">Cancel</string>
+    <string name="history_empty">No history yet</string>
+    <string name="history_no_matches">No matching entries</string>
+    <string name="history_rejected">Rejected</string>
+    <string name="history_silenced">Silenced</string>
+    <string name="history_allowed">Allowed</string>
+    <string name="history_block">Block</string>
+    <string name="history_call">Call</string>
+    <string name="history_search_hint">Search history</string>
+    <string name="history_stats_today">Today</string>
+    <string name="history_stats_week">7 days</string>
+    <string name="history_stats_total">Total</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_role_title">Call Screening Role</string>
+    <string name="settings_role_status">Status: %s</string>
+    <string name="settings_role_active">Active</string>
+    <string name="settings_role_not_granted">Not granted</string>
+    <string name="settings_role_grant">Grant Call Screening Role</string>
+    <string name="settings_change_app">Change default apps</string>
+    <string name="settings_open_app">Open App Settings</string>
+    <string name="settings_background_protection">Allow background operation</string>
+    <string name="settings_background_protection_enabled">Background operation allowed</string>
+    <string name="settings_background_protection_disabled">Background operation restricted</string>
+    <string name="settings_theme_title">Theme</string>
+    <string name="settings_theme_system">System default</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_language_title">Language</string>
+    <string name="settings_language_system">System default</string>
+    <string name="settings_language_english">English</string>
+    <string name="settings_language_polish">Polski</string>
+    <string name="settings_notify_title">Notifications</string>
+    <string name="settings_notify_rejected_desc">Rejected calls</string>
+    <string name="settings_notify_silenced_desc">Silenced calls</string>
+    <string name="settings_notify_expiry_desc">Block expiry</string>
+    <string name="settings_summary_title">Active blocks</string>
+    <string name="settings_summary_active">%1$d number(s) currently blocked</string>
+    <string name="settings_summary_empty">No active blocks</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version">CallTamer v1.0.0</string>
+    <string name="settings_description">Temporary call blocking app. Fully offline, privacy-first.</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Welcome to CallTamer</string>
+    <string name="onboarding_welcome_body">Temporarily block unwanted calls without adding numbers to a permanent blacklist. Blocks expire automatically.</string>
+    <string name="onboarding_permissions_title">Permissions needed</string>
+    <string name="onboarding_permissions_body">• Call Screening role — to screen and block incoming calls\n• Notifications — for block expiry alerts\n• Contacts — to pick numbers from your address book\n• Call Log — to block numbers from recent calls</string>
+    <string name="onboarding_get_started">Get Started</string>
+    <string name="onboarding_checking">Checking permissions…</string>
+
+    <string name="onboarding_role_title">Call Screening Role</string>
+    <string name="onboarding_role_body">CallTamer needs to be set as your default Caller ID &amp; Spam app to screen and block incoming calls. Without this role, call blocking will not work at all — calls will ring through normally.</string>
+    <string name="onboarding_role_hint">You\'ll be taken to system settings. Tap the toggle to grant CallTamer this role, then press back to return here.</string>
+    <string name="onboarding_role_grant">Grant Call Screening Role</string>
+
+    <string name="onboarding_notif_title">Notifications</string>
+    <string name="onboarding_notif_body">CallTamer sends a notification when a temporary block expires so you know it\'s been lifted. Without this, you\'d have to open the app to check.</string>
+    <string name="onboarding_notif_allow">Allow Notifications</string>
+
+    <string name="onboarding_contacts_title">Contacts Access</string>
+    <string name="onboarding_contacts_body">When creating a block, you can pick a number directly from your contacts book instead of typing it manually. This permission lets CallTamer read the phone number from the contact you select. Your contacts list never leaves your device.</string>
+    <string name="onboarding_contacts_allow">Allow Contacts Access</string>
+
+    <string name="onboarding_calllog_title">Call Log Access</string>
+    <string name="onboarding_calllog_body">When creating a block, you can pick a number from your recent incoming or outgoing calls. This permission lets CallTamer read the number and timestamp from your call log. Your call history never leaves your device.</string>
+    <string name="onboarding_calllog_allow">Allow Call Log Access</string>
+
+    <string name="onboarding_skip">Skip — I\'ll do this later</string>
+    <string name="onboarding_complete_title">You\'re all set!</string>
+    <string name="onboarding_complete_body">CallTamer is ready. You can always change permissions later in Settings.</string>
+    <string name="onboarding_start">Start using CallTamer</string>
+</resources>
