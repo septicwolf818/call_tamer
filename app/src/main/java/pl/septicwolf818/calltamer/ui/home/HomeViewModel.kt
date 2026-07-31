@@ -2,7 +2,6 @@ package pl.septicwolf818.calltamer.ui.home
 
 import android.app.role.RoleManager
 import android.content.Context
-import android.content.Intent
 import android.os.Build
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -63,15 +62,6 @@ class HomeViewModel @Inject constructor(
             val roleManager = context.getSystemService(Context.ROLE_SERVICE) as RoleManager
             val isHeld = roleManager.isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
             _uiState.value = _uiState.value.copy(showRoleWarning = !isHeld)
-        }
-    }
-
-    fun requestRole() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            val roleManager = context.getSystemService(Context.ROLE_SERVICE) as RoleManager
-            val intent = roleManager.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            context.startActivity(intent)
         }
     }
 }

@@ -7,7 +7,6 @@ import pl.septicwolf818.calltamer.data.model.BlockType
 
 interface BlockRepository {
     fun observeActiveRules(): Flow<List<BlockRuleEntity>>
-    fun observeAllRules(): Flow<List<BlockRuleEntity>>
     fun observeRuleById(id: Long): Flow<BlockRuleEntity?>
     suspend fun getActiveRuleByNumber(normalizedNumber: String): BlockRuleEntity?
     suspend fun getRuleById(id: Long): BlockRuleEntity?
@@ -22,8 +21,6 @@ interface BlockRepository {
     ): Long
     suspend fun updateRule(rule: BlockRuleEntity)
     suspend fun deactivateRule(id: Long)
-    suspend fun deleteRule(id: Long)
-    suspend fun getExpiredTemporaryRules(now: Long): List<BlockRuleEntity>
     suspend fun deactivateExpiredRules(now: Long): Int
     suspend fun getAllActiveRules(): List<BlockRuleEntity>
 }

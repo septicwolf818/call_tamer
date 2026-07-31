@@ -175,7 +175,7 @@ class NotificationHelper @Inject constructor(
 
     private fun openRulePendingIntent(ruleId: Long): PendingIntent {
         val intent = Intent(context, MainActivity::class.java).apply {
-            data = Uri.parse("$DEEP_LINK_SCHEME://$DEEP_LINK_HOST/$ruleId")
+            data = Uri.parse("$DEEP_LINK_SCHEME://$DEEP_LINK_HOST/$ruleId?confirmUnblock=false")
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
         return PendingIntent.getActivity(

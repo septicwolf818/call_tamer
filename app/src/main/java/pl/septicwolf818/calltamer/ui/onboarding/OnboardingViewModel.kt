@@ -17,6 +17,7 @@ enum class PermissionStepType {
 data class OnboardingState(
     val steps: List<PermissionStepType> = emptyList(),
     val currentIndex: Int = 0,
+    val started: Boolean = false,
     val isComplete: Boolean = false
 ) {
     val currentStep: PermissionStepType? get() = steps.getOrNull(currentIndex)
@@ -39,6 +40,10 @@ class OnboardingViewModel @Inject constructor() : ViewModel() {
 
     fun nextStep() {
         val current = _state.value
+        if (!current.started) {
+            _state.value = current.copy(started = true)
+            return
+        }
         val nextIndex = current.currentIndex + 1
         if (nextIndex >= current.steps.size) {
             _state.value = current.copy(isComplete = true)

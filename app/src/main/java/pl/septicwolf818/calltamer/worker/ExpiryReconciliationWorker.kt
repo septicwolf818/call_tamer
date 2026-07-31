@@ -29,7 +29,7 @@ class ExpiryReconciliationWorker @AssistedInject constructor(
 
     override suspend fun doWork(): Result {
         val now = System.currentTimeMillis()
-        val deactivated = blockRepository.deactivateExpiredRules(now)
+        blockRepository.deactivateExpiredRules(now)
         return Result.success()
     }
 

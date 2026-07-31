@@ -10,8 +10,6 @@ sealed class Screen(val route: String) {
     }
     data object BlockDetail : Screen("blockDetail/{ruleId}?confirmUnblock={confirmUnblock}") {
         fun createRoute(ruleId: Long) = "blockDetail/$ruleId"
-        fun createRoute(ruleId: Long, confirmUnblock: Boolean) =
-            "blockDetail/$ruleId?confirmUnblock=$confirmUnblock"
     }
     data object History : Screen("history")
     data object Settings : Screen("settings")

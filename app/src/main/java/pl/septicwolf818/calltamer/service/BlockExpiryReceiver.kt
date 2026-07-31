@@ -11,10 +11,6 @@ import pl.septicwolf818.calltamer.domain.BlockExpiryScheduler
 import pl.septicwolf818.calltamer.data.repository.BlockRepository
 import javax.inject.Inject
 
-/**
- * Receives expiry alarm intents from AlarmManager.
- * Deactivates the associated block rule and shows a notification.
- */
 @AndroidEntryPoint
 class BlockExpiryReceiver : BroadcastReceiver() {
 

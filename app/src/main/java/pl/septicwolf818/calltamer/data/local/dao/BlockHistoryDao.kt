@@ -12,9 +12,6 @@ interface BlockHistoryDao {
     @Query("SELECT * FROM block_history ORDER BY timestamp DESC")
     fun observeAll(): Flow<List<BlockHistoryEntryEntity>>
 
-    @Query("SELECT * FROM block_history WHERE phoneNumberNormalized = :number ORDER BY timestamp DESC")
-    fun observeByNumber(number: String): Flow<List<BlockHistoryEntryEntity>>
-
     @Insert
     suspend fun insert(entry: BlockHistoryEntryEntity): Long
 

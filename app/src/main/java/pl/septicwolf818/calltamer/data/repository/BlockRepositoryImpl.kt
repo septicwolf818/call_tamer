@@ -15,8 +15,6 @@ class BlockRepositoryImpl @Inject constructor(
 
     override fun observeActiveRules(): Flow<List<BlockRuleEntity>> = dao.observeActiveRules()
 
-    override fun observeAllRules(): Flow<List<BlockRuleEntity>> = dao.observeAllRules()
-
     override fun observeRuleById(id: Long): Flow<BlockRuleEntity?> = dao.observeById(id)
 
     override suspend fun getActiveRuleByNumber(normalizedNumber: String): BlockRuleEntity? =
@@ -53,11 +51,6 @@ class BlockRepositoryImpl @Inject constructor(
     override suspend fun updateRule(rule: BlockRuleEntity) = dao.update(rule)
 
     override suspend fun deactivateRule(id: Long) = dao.deactivate(id)
-
-    override suspend fun deleteRule(id: Long) = dao.deleteById(id)
-
-    override suspend fun getExpiredTemporaryRules(now: Long): List<BlockRuleEntity> =
-        dao.getExpiredTemporaryRules(now)
 
     override suspend fun deactivateExpiredRules(now: Long): Int =
         dao.deactivateExpired(now)

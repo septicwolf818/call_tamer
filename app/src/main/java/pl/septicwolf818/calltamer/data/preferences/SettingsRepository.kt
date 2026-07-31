@@ -47,8 +47,6 @@ class SettingsRepository @Inject constructor(
     )
     val themeMode: StateFlow<ThemeMode> = _themeMode.asStateFlow()
 
-    val currentThemeMode: ThemeMode get() = _themeMode.value
-
     val currentLanguage: AppLanguage
         get() = AppLanguage.fromStorage(prefs.getString(KEY_LANGUAGE, null))
 

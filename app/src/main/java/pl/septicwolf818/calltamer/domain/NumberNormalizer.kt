@@ -18,11 +18,4 @@ class NumberNormalizer @Inject constructor() {
     fun normalize(number: String): String {
         return PhoneNumberUtils.normalizeNumber(number)
     }
-
-    /**
-     * Compares two numbers after normalization.
-     */
-    fun matches(a: String, b: String): Boolean {
-        return normalize(a) == normalize(b)
-    }
 }

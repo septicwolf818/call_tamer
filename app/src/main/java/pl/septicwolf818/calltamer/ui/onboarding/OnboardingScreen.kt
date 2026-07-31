@@ -85,10 +85,6 @@ fun OnboardingScreen(
         viewModel.initSteps(steps)
     }
 
-    LaunchedEffect(state.isComplete) {
-        if (state.isComplete) onComplete()
-    }
-
     val notifLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestPermission()
     ) { viewModel.nextStep() }
@@ -104,15 +100,17 @@ fun OnboardingScreen(
     val currentStep = state.currentStep
 
     Surface(modifier = Modifier.fillMaxSize()) {
-        WelcomeStep(
-            stepType = currentStep,
-            totalSteps = state.totalSteps,
-            stepIndex = state.currentIndex,
-            loading = state.steps.isEmpty() && !state.isComplete,
-            onStart = { viewModel.nextStep() },
-            roleContent = {
-                if (currentStep == PermissionStepType.SCREENING_ROLE) {
-                    ScreeningRoleStep(
+        if (state.isComplete) {
+            CompleteStep(onStart = onComplete)
+        } else {
+            WelcomeStep(
+                stepType = currentStep,
+                started = state.started,
+                loading = state.steps.isEmpty() && !state.isComplete,
+                onStart = { viewModel.nextStep() },
+                roleContent = {
+                    if (currentStep == PermissionStepType.SCREENING_ROLE) {
+                        ScreeningRoleStep(
                         onGrant = {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                                 requestRole()
@@ -156,18 +154,41 @@ fun OnboardingScreen(
                         onGrant = { callLogLauncher.launch(Manifest.permission.READ_CALL_LOG) },
                         onSkip = { viewModel.nextStep() }
                     )
-                    PermissionStepType.SCREENING_ROLE -> { }
+                    PermissionStepType.SCREENING_ROLE -> Unit
                 }
             }
         )
+        }
+    }
+}
+
+@Composable
+private fun CompleteStep(onStart: () -> Unit) {
+    Column(
+        modifier = Modifier.fillMaxSize().padding(24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Icon(Icons.Default.Security, contentDescription = null, modifier = Modifier.size(80.dp), tint = MaterialTheme.colorScheme.primary)
+        Spacer(Modifier.height(24.dp))
+        Text(stringResource(R.string.onboarding_complete_title), style = MaterialTheme.typography.headlineLarge)
+        Spacer(Modifier.height(16.dp))
+        Text(
+            stringResource(R.string.onboarding_complete_body),
+            style = MaterialTheme.typography.bodyLarge,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+        Spacer(Modifier.height(32.dp))
+        Button(onClick = onStart, modifier = Modifier.fillMaxWidth()) {
+            Text(stringResource(R.string.onboarding_start))
+        }
     }
 }
 
 @Composable
 private fun WelcomeStep(
     stepType: PermissionStepType?,
-    totalSteps: Int,
-    stepIndex: Int,
+    started: Boolean,
     loading: Boolean,
     onStart: () -> Unit,
     roleContent: @Composable () -> Unit,
@@ -185,7 +206,7 @@ private fun WelcomeStep(
 
         if (stepType == null) return
 
-        if (stepIndex == 0) {
+        if (!started) {
             Icon(Icons.Default.Security, contentDescription = null, modifier = Modifier.size(80.dp), tint = MaterialTheme.colorScheme.primary)
             Spacer(Modifier.height(24.dp))
             Text(stringResource(R.string.onboarding_welcome_title), style = MaterialTheme.typography.headlineLarge)

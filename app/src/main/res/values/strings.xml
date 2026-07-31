@@ -50,7 +50,6 @@
     <string name="duration_cancel">Cancel</string>
     <string name="duration_next">Choose Time</string>
     <string name="duration_back">Back</string>
-    <string name="duration_date_label">Date</string>
     <string name="duration_time_label">Select time</string>
 
     <!-- Block Detail Screen -->
