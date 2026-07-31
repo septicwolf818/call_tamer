@@ -31,6 +31,17 @@ When someone calls a number you've blocked, CallTamer steps in automatically:
 
 Every handled call is saved to your call history, where you can review or block a number again in one tap.
 
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center"><img src="screenshots/home.png" width="220"><br><sub>Home</sub></td>
+    <td align="center"><img src="screenshots/block_detail.png" width="220"><br><sub>Block details</sub></td>
+    <td align="center"><img src="screenshots/history.png" width="220"><br><sub>Call history</sub></td>
+    <td align="center"><img src="screenshots/settings.png" width="220"><br><sub>Settings</sub></td>
+  </tr>
+</table>
+
 ## Managing blocks
 
 - **Add a block** — tap the + button, enter the number, choose how to handle the call and how long the block should last.
