@@ -110,6 +110,7 @@
     <string name="history_stats_today">Dziś</string>
     <string name="history_stats_week">7 dni</string>
     <string name="history_stats_total">Razem</string>
+    <string name="date_format_history">d MMM, HH:mm</string>
 
     <!-- Settings Screen -->
     <string name="settings_role_title">Rola Call Screening</string>

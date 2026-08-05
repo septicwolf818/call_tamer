@@ -110,6 +110,7 @@
     <string name="history_stats_today">Today</string>
     <string name="history_stats_week">7 days</string>
     <string name="history_stats_total">Total</string>
+    <string name="date_format_history">MMM dd, HH:mm</string>
 
     <!-- Settings Screen -->
     <string name="settings_role_title">Call Screening Role</string>
