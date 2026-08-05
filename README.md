@@ -61,6 +61,12 @@ Every handled call is saved to your call history, where you can review or block 
 
 CallTamer works fully offline. All of your blocks and call history are stored on your device only — nothing is uploaded anywhere.
 
+## Development
+
+- **Java 25** or higher is required.
+- **Gradle 9.6.1** or higher.
+- **Android SDK 37** (API 37) is the target.
+
 ## Support
 
 If you have questions or run into trouble, please open an issue in this repository.
