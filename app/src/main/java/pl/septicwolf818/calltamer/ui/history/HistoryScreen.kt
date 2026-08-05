@@ -43,17 +43,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.septicwolf818.calltamer.R
-import pl.septicwolf818.calltamer.data.local.entity.BlockHistoryEntryEntity
 import pl.septicwolf818.calltamer.data.model.CallAction
 import java.text.SimpleDateFormat
 import java.util.Date
-import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -62,8 +61,9 @@ fun HistoryScreen(
     onNavigateBack: () -> Unit,
     viewModel: HistoryViewModel = hiltViewModel()
 ) {
-    val entries by viewModel.entries.collectAsStateWithLifecycle()
-    val stats by viewModel.stats.collectAsStateWithLifecycle()
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val entries = uiState.entries
+    val stats = uiState.stats
     val context = LocalContext.current
     var query by remember { mutableStateOf("") }
     var showClearConfirm by remember { mutableStateOf(false) }
@@ -72,9 +72,9 @@ fun HistoryScreen(
         if (query.isBlank()) {
             entries
         } else {
-            entries.filter { entry ->
-                entry.contactName?.contains(query, ignoreCase = true) == true ||
-                    entry.phoneNumberNormalized.contains(query, ignoreCase = true)
+            entries.filter { model ->
+                model.entry.contactName?.contains(query, ignoreCase = true) == true ||
+                    model.entry.phoneNumberNormalized.contains(query, ignoreCase = true)
             }
         }
     }
@@ -141,14 +141,14 @@ fun HistoryScreen(
                     contentPadding = PaddingValues(16.dp),
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    items(filteredEntries, key = { it.id }) { entry ->
+                    items(filteredEntries, key = { it.entry.id }) { model ->
                         HistoryCard(
-                            entry = entry,
-                            onBlock = { onBlockNumber(entry.phoneNumberNormalized) },
+                            model = model,
+                            onBlock = { onBlockNumber(model.entry.phoneNumberNormalized) },
                             onCall = {
                                 val intent = Intent(
                                     Intent.ACTION_DIAL,
-                                    Uri.parse("tel:${Uri.encode(entry.phoneNumberNormalized)}")
+                                    Uri.parse("tel:${Uri.encode(model.entry.phoneNumberNormalized)}")
                                 )
                                 context.startActivity(intent)
                             }
@@ -220,11 +220,14 @@ private fun StatItem(label: String, value: Int, modifier: Modifier = Modifier) {
 
 @Composable
 private fun HistoryCard(
-    entry: BlockHistoryEntryEntity,
+    model: HistoryEntryUiModel,
     onBlock: () -> Unit,
     onCall: () -> Unit
 ) {
-    val dateFormat = SimpleDateFormat("MMM dd, HH:mm", Locale.getDefault())
+    val entry = model.entry
+    val locale = LocalConfiguration.current.locales[0]
+    val pattern = stringResource(R.string.date_format_history)
+    val dateFormat = remember(locale, pattern) { SimpleDateFormat(pattern, locale) }
     val actionLabel = when (entry.action) {
         CallAction.REJECTED -> stringResource(R.string.history_rejected)
         CallAction.SILENCED -> stringResource(R.string.history_silenced)
@@ -263,22 +266,23 @@ private fun HistoryCard(
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
-            if (entry.action != CallAction.ALLOWED) {
-                Spacer(Modifier.height(4.dp))
-                HorizontalDivider()
-                Spacer(Modifier.height(4.dp))
-                Row {
+            
+            Spacer(Modifier.height(4.dp))
+            HorizontalDivider()
+            Spacer(Modifier.height(4.dp))
+            Row {
+                if (!model.isCurrentlyBlocked) {
                     TextButton(onClick = onBlock) {
                         Icon(Icons.Default.Block, contentDescription = null, modifier = Modifier.size(18.dp))
                         Spacer(Modifier.width(6.dp))
                         Text(stringResource(R.string.history_block))
                     }
                     Spacer(Modifier.width(4.dp))
-                    TextButton(onClick = onCall) {
-                        Icon(Icons.Default.Call, contentDescription = null, modifier = Modifier.size(18.dp))
-                        Spacer(Modifier.width(6.dp))
-                        Text(stringResource(R.string.history_call))
-                    }
+                }
+                TextButton(onClick = onCall) {
+                    Icon(Icons.Default.Call, contentDescription = null, modifier = Modifier.size(18.dp))
+                    Spacer(Modifier.width(6.dp))
+                    Text(stringResource(R.string.history_call))
                 }
             }
         }
